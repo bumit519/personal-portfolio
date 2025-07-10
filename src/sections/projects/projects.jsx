@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './projectsStyles.module.css';
 
+import aiResumeBuilder from '../../assets/ai resume builder.png';
 import fitLift from '../../assets/fitlift.png';
-import freshBurger from '../../assets/fresh-burger.png';
 import hipsster from '../../assets/hipsster.png';
-import viberr from '../../assets/viberr.png';
+import portfolioThumbnail from '../../assets/portfolio thumbnail.png';
 
 import ProjectCard from '../../common/ProjectCard';
 
@@ -15,17 +15,19 @@ const Projects = () => {
 
       <div className={styles.projectsContainer}>
         <ProjectCard
-          src={viberr}
-          link="https://github.com/Ade-mir/company-landing-page-2"
-          h3="Viberr"
-          p="Streaming App" // Changed to short description
+          src={portfolioThumbnail}
+          liveLink="https://personal-portfolio-theta-ivory.vercel.app/"
+          repoLink="https://github.com/bumit519/personal-portfolio"
+          h3="Portfolio"
+          p="Personal Portfolio" // Updated description
         />
 
         <ProjectCard
-          src={freshBurger}
-          link="https://github.com/Ade-mir/company-landing-page-2"
-          h3="Fresh Burger"
-          p="Restaurant Shop" // Changed to short description
+          src={aiResumeBuilder}
+          liveLink="https://ai-resume-builder-demo.vercel.app/"
+          repoLink="https://github.com/bumit519/ai-resume-builder"
+          h3="AI Resume Builder"
+          p="AI-powered resume creation tool" // Updated description
         />
 
         <ProjectCard
