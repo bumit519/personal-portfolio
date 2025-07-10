@@ -1,0 +1,160 @@
+/* Theme Variables */
+:root {
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --btn-color: #007AFF;
+  --btn-text-color: #ffffff;
+  --form-text-color: #ffffff;
+  --section-bg: rgba(255, 255, 255, 0.02);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --accent-color: #007AFF;
+  --secondary-color: #5856D6;
+}
+
+[data-theme="light"] {
+  --background-color: #ffffff;
+  --text-color: #1d1d1f;
+  --btn-color: #007AFF;
+  --btn-text-color: #ffffff;
+  --form-text-color: #1d1d1f;
+  --section-bg: rgba(0, 0, 0, 0.02);
+  --card-bg: rgba(0, 0, 0, 0.05);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --accent-color: #007AFF;
+  --secondary-color: #5856D6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Section styling - Apple-style */
+section {
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: var(--text-color);
+  position: relative;
+  letter-spacing: -0.003em;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+  border-radius: 2px;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar - Apple-style */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Selection styling - Apple-style */
+::selection {
+  background: rgba(0, 122, 255, 0.3);
+  color: var(--text-color);
+}
+
+/* Focus styles for accessibility - Apple-style */
+*:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Typography improvements - Apple-style */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.003em;
+}
+
+p {
+  font-weight: 400;
+  letter-spacing: -0.022em;
+}
+
+/* Button styling - Apple-style */
+button {
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Responsive design - Apple-style */
+@media (max-width: 768px) {
+  section {
+    padding: 4rem 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 3rem 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+}
