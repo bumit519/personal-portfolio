@@ -863,3 +863,8 @@
   0%, 100% { transform: translateY(0) rotate(-45deg); }
   50% { transform: translateY(10px) rotate(-45deg); }
 }
+@media (max-width: 768px) {
+  .scrollDown {
+    display: none !important;
+  }
+}
