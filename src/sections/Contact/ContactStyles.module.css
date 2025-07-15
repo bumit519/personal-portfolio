@@ -306,6 +306,12 @@ textarea:focus {
   word-break: break-all;
 }
 
+[data-theme='light'] input:not([type='submit']),
+[data-theme='light'] textarea,
+[data-theme='light'] .contactCard {
+  border: 2px solid #e0e3ea;
+}
+
 @media (max-width: 900px) {
   .contactGrid {
     flex-direction: column;
