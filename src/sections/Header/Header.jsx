@@ -50,7 +50,9 @@ const Header = () => {
     <header className={`${styles.header} glassCard ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <h2 className="gradientText">Sumit Chauhan</h2>
+          <h2 className="gradientText" style={{cursor: 'pointer'}} onClick={() => window.dispatchEvent(new Event('toggle-avatar'))}>
+            Sumit Chauhan
+          </h2>
         </div>
 
         <nav ref={navRef} className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>

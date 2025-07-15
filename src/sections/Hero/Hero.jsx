@@ -27,7 +27,14 @@ const Hero = () => {
   const [showHoverHint, setShowHoverHint] = useState(true); // Start as true
   const [lastNameIndex, setLastNameIndex] = useState(0);
   const [isErasing, setIsErasing] = useState(false);
+  const [isAvatarToggled, setIsAvatarToggled] = useState(false); // NEW
   const lastName = 'Chauhan';
+
+  useEffect(() => {
+    const handleToggleAvatar = () => setIsAvatarToggled((prev) => !prev);
+    window.addEventListener('toggle-avatar', handleToggleAvatar);
+    return () => window.removeEventListener('toggle-avatar', handleToggleAvatar);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -123,7 +130,7 @@ const Hero = () => {
       <div className={styles.colorModeContainer}>
         <img 
           className={`${styles.hero} ${isImageLoaded ? styles.loaded : ''}`}
-          src={isAvatarHovered ? avatarImg : avatar2Img} 
+          src={(isAvatarHovered || isAvatarToggled) ? avatarImg : avatar2Img}
           alt="Profile picture of Sumit"
           onMouseEnter={handleAvatarHover}
           onMouseLeave={handleAvatarLeave}
