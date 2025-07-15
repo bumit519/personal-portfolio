@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
@@ -35,10 +39,76 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 #root {
   min-height: 100vh;
   background-color: var(--bg-color);
   position: relative;
+}
+
+/* === Apple-style Gradient Text Utility === */
+.gradientText {
+  background: linear-gradient(135deg, #007AFF 0%, #5856D6 50%, #FF2D55 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  position: relative;
+}
+
+/* === Glassmorphism Card Utility === */
+.glassCard {
+  background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.2);
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+  overflow: hidden;
+}
+
+/* === Apple-style Gradient Button Utility === */
+.gradientBtn {
+  background: linear-gradient(135deg, #007AFF 0%, #5856D6 50%, #FF2D55 100%);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  width: 200px;
+  height: 60px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 25px rgba(0, 122, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: -0.01em;
+}
+
+.gradientBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.gradientBtn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 122, 255, 0.4);
+  background: linear-gradient(135deg, #5856D6 0%, #FF2D55 50%, #007AFF 100%);
+}
+
+.gradientBtn:hover::before {
+  left: 100%;
+}
+
+.gradientBtn:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 6px 25px rgba(0, 122, 255, 0.3);
 }

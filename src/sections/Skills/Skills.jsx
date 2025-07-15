@@ -21,11 +21,11 @@ function Skills() {
 
   return (
     <section id="skills" className={styles.container}>
-      <h1 className={styles.sectionTitle}>Skills & Technologies</h1>
+      <h1 className={`${styles.sectionTitle} gradientText`}>Skills & Technologies</h1>
       
       <div className={styles.skillList}>
         {frontendSkills.map((skill, index) => (
-          <div key={index} className={styles.skillItem}>
+          <div key={index} className={`${styles.skillItem} glassCard`}>
             <img src={checkMarkIcon} alt="Checkmark" className={styles.skillIcon} />
             <p className={styles.skillName}>{skill}</p>
           </div>
@@ -36,7 +36,7 @@ function Skills() {
 
       <div className={styles.skillList}>
         {backendSkills.map((skill, index) => (
-          <div key={index} className={styles.skillItem}>
+          <div key={index} className={`${styles.skillItem} glassCard`}>
             <img src={checkMarkIcon} alt="Checkmark" className={styles.skillIcon} />
             <p className={styles.skillName}>{skill}</p>
           </div>
@@ -47,7 +47,7 @@ function Skills() {
 
       <div className={styles.skillList}>
         {toolsSkills.map((skill, index) => (
-          <div key={index} className={styles.skillItem}>
+          <div key={index} className={`${styles.skillItem} glassCard`}>
             <img src={checkMarkIcon} alt="Checkmark" className={styles.skillIcon} />
             <p className={styles.skillName}>{skill}</p>
           </div>

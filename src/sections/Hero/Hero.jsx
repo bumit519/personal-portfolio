@@ -25,30 +25,9 @@ const Hero = () => {
   const [isAvatarHovered, setIsAvatarHovered] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [showHoverHint, setShowHoverHint] = useState(true); // Start as true
-
-  // Single theme toggle component
-  const ThemeIconComponent = (props) => (
-    theme === 'light' 
-      ? <Moon {...props} color="black" />
-      : <Sun {...props} color="yellow" />
-  );
-
-  // Creative social icons - images for light theme, icons for dark theme
-  const GithubIconComponent = (props) => (
-    theme === 'light' 
-      ? <img src={githubLight} alt="GitHub" {...props} className={styles.socialImage} />
-      : <Github {...props} color="white" size={28} />
-  );
-  const LinkedinIconComponent = (props) => (
-    theme === 'light' 
-      ? <img src={linkedinLight} alt="LinkedIn" {...props} className={styles.socialImage} />
-      : <Linkedin {...props} color="white" size={28} />
-  );
-  const InstagramIconComponent = (props) => (
-    theme === 'light' 
-      ? <img src={instagramLight} alt="Instagram" {...props} className={styles.socialImage} />
-      : <Instagram {...props} color="white" size={28} />
-  );
+  const [lastNameIndex, setLastNameIndex] = useState(0);
+  const [isErasing, setIsErasing] = useState(false);
+  const lastName = 'Chauhan';
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -83,6 +62,52 @@ const Hero = () => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    let timeout;
+    if (!isErasing && lastNameIndex < lastName.length) {
+      timeout = setTimeout(() => {
+        setLastNameIndex(lastNameIndex + 1);
+      }, 200);
+    } else if (!isErasing && lastNameIndex === lastName.length) {
+      timeout = setTimeout(() => {
+        setIsErasing(true);
+      }, 1000); // Pause before erasing
+    } else if (isErasing && lastNameIndex > 0) {
+      timeout = setTimeout(() => {
+        setLastNameIndex(lastNameIndex - 1);
+      }, 100);
+    } else if (isErasing && lastNameIndex === 0) {
+      timeout = setTimeout(() => {
+        setIsErasing(false);
+      }, 500); // Pause before typing again
+    }
+    return () => clearTimeout(timeout);
+  }, [lastNameIndex, isErasing]);
+
+  // Single theme toggle component
+  const ThemeIconComponent = (props) => (
+    theme === 'light' 
+      ? <Moon {...props} color="black" />
+      : <Sun {...props} color="yellow" />
+  );
+
+  // Creative social icons - images for light theme, icons for dark theme
+  const GithubIconComponent = (props) => (
+    theme === 'light' 
+      ? <img src={githubLight} alt="GitHub" {...props} className={styles.socialImage} />
+      : <Github {...props} color="white" size={28} />
+  );
+  const LinkedinIconComponent = (props) => (
+    theme === 'light' 
+      ? <img src={linkedinLight} alt="LinkedIn" {...props} className={styles.socialImage} />
+      : <Linkedin {...props} color="white" size={28} />
+  );
+  const InstagramIconComponent = (props) => (
+    theme === 'light' 
+      ? <img src={instagramLight} alt="Instagram" {...props} className={styles.socialImage} />
+      : <Instagram {...props} color="white" size={28} />
+  );
 
   const handleAvatarHover = () => {
     setIsAvatarHovered(true);
@@ -121,7 +146,7 @@ const Hero = () => {
         <h1 className={styles.title}>
           <span className={styles.firstName}>Sumit</span>
           <br />
-          <span className={styles.lastName}>Chauhan</span>
+          <span className={styles.lastName}>{lastName.slice(0, lastNameIndex)}</span>
         </h1>
         <h2 className={styles.typing}>{titles[currentTitle]}</h2>
 
@@ -138,13 +163,17 @@ const Hero = () => {
         </span>
 
         <p className={styles.description}>
-          With a passion for developing modern React web apps for commercial business.
+          Passionate frontend engineer specializing in crafting high-performance, accessible, and visually stunning React applications. Adept at transforming ideas into seamless user experiences, with a strong focus on clean architecture, scalability, and design systems.
         </p>
 
         <a href={CV} download>
           <button className={styles.resumeBtn}>Resume</button>
         </a>
       </div>
+      <a href="#about" className={styles.scrollDown} aria-label="Scroll to About section" style={{ pointerEvents: 'auto' }}>
+        <span>Scroll Down</span>
+        <div className={styles.arrow}></div>
+      </a>
     </section>
   );
 };

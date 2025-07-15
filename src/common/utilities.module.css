@@ -1,0 +1,111 @@
+/* utilities.module.css */
+
+/* Gradient Text (Apple-style) */
+.gradientText {
+    background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899, #22d3ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+  }
+  
+  /* Glassmorphism Card */
+  .glassCard {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  /* Section Heading */
+  .sectionHeading {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* Section Description */
+  .sectionSubtext {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.6;
+  }
+  
+  /* Button with gradient border */
+  .outlineGradientBtn {
+    border: 1px solid transparent;
+    border-radius: 2rem;
+    background-image: linear-gradient(#000, #000), linear-gradient(to right, #6366f1, #ec4899, #22d3ee);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .outlineGradientBtn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+/* Small, roundish navigation button */
+.navBtn {
+  padding: 0.35rem 1.1rem;
+  font-size: 0.98rem;
+  border-radius: 999px;
+  font-weight: 600;
+  background: rgba(255,255,255,0.10);
+  color: var(--text-color);
+  border: none;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: all 0.22s cubic-bezier(0.4,0,0.2,1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navBtn:hover, .navBtn:focus {
+  background: linear-gradient(90deg, #6366f1, #22d3ee);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(99,102,241,0.18);
+  transform: scale(1.07) translateY(-2px);
+}
+
+.projectLinkBtn {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899, #22d3ee);
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.6rem 1.4rem;
+  box-shadow: 0 4px 16px rgba(99,102,241,0.13);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+  z-index: 1;
+}
+.projectLinkBtn:hover, .projectLinkBtn:focus {
+  filter: brightness(1.13);
+  transform: scale(1.07) translateY(-2px);
+  box-shadow: 0 8px 32px rgba(99,102,241,0.18);
+  outline: none;
+}
+  

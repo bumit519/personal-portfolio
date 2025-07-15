@@ -4,6 +4,7 @@
   background: var(--section-bg);
   border-top: 1px solid var(--border-color);
   position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.2);
 }
 
 .container::before {
@@ -44,10 +45,10 @@
   color: var(--text-color);
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s ease;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   position: relative;
+  transition: all 0.3s ease;
 }
 
 .footerLink::after {
@@ -63,8 +64,8 @@
 }
 
 .footerLink:hover {
-  color: #667eea;
-  background: rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 122, 255, 0.2);
 }
 
 .footerLink:hover::after {
@@ -88,12 +89,13 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
   text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .socialLink:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.08);
   background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 122, 255, 0.3);
 }
 
 /* Responsive design */

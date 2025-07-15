@@ -30,10 +30,6 @@
   font-weight: 700;
   color: var(--text-color);
   margin: 0;
-  background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 50%, #C084FC 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .nav {
@@ -77,6 +73,8 @@
 .navList button:hover {
   color: #8B5CF6;
   background: rgba(139, 92, 246, 0.1);
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 122, 255, 0.2);
 }
 
 .navList button:hover::after {

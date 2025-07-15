@@ -8,9 +8,11 @@
 .sectionTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--text-color);
+  /* color: var(--text-color); */
   margin-bottom: 3rem;
   position: relative;
+  /* Use gradientText utility for gradient heading */
+  /* composes: gradientText; */
 }
 
 .sectionTitle::after {
@@ -36,17 +38,20 @@
 }
 
 .skillItem {
-  background: var(--card-bg);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 1.5rem;
+  /* Use glassCard utility for glassmorphism */
+  /* composes: glassCard; */
   display: flex;
   align-items: center;
   gap: 1rem;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  /* Remove old background, border, blur */
+  /* background: var(--card-bg); */
+  /* backdrop-filter: blur(10px); */
+  /* border: 1px solid var(--border-color); */
+  /* border-radius: 12px; */
+  padding: 1.5rem;
 }
 
 .skillItem::before {

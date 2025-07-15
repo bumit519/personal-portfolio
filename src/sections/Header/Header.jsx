@@ -1,6 +1,7 @@
 import { Menu, Moon, Sun, X } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 import { useTheme } from '../../common/ThemeContext';
+import utilities from '../../common/utilities.module.css';
 import styles from './HeaderStyles.module.css';
 
 const Header = () => {
@@ -46,18 +47,18 @@ const Header = () => {
   };
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
+    <header className={`${styles.header} glassCard ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <h2>Sumit Chauhan</h2>
+          <h2 className="gradientText">Sumit Chauhan</h2>
         </div>
 
         <nav ref={navRef} className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>
           <ul className={styles.navList}>
-            <li><button onClick={() => scrollToSection('hero')}>Home</button></li>
-            <li><button onClick={() => scrollToSection('projects')}>Projects</button></li>
-            <li><button onClick={() => scrollToSection('skills')}>Skills</button></li>
-            <li><button onClick={() => scrollToSection('contact')}>Contact</button></li>
+            <li><button className={utilities.navBtn} onClick={() => scrollToSection('hero')}>Home</button></li>
+            <li><button className={utilities.navBtn} onClick={() => scrollToSection('projects')}>Projects</button></li>
+            <li><button className={utilities.navBtn} onClick={() => scrollToSection('skills')}>Skills</button></li>
+            <li><button className={utilities.navBtn} onClick={() => scrollToSection('contact')}>Contact</button></li>
           </ul>
         </nav>
 

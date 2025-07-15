@@ -11,7 +11,11 @@ import ProjectCard from '../../common/ProjectCard';
 const Projects = () => {
   return (
     <section id="projects" className={styles.container}>
-      <h1 className={styles.sectionTitle}>Projects</h1>
+      <h1 className={`${styles.heading} ${styles.gradientText} ${styles.fadeIn}`}>Featured Projects</h1>
+      <p className={`${styles.description} ${styles.fadeIn}`}
+         style={{ animationDelay: '0.2s' }}>
+        A selection of my favorite work, blending modern web technologies and thoughtful design. Each project showcases a focus on clean UI, performance, and delightful user experience.
+      </p>
 
       <div className={styles.projectsContainer}>
         <ProjectCard
